@@ -19,15 +19,15 @@ export default function NotFoundPage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center">
+    <div className="w-full flex flex-col items-center justify-center mt-[120px]">
       <NotFoundIcon width={379} height={325} />
-      <h2 className="text-center text-2xl mb-20">
-        Maalesef, aradığınız içeriği bulamadık.
+      <h2 className="text-center text-lg mb-20 text-white">
+        We're sorry, but we couldn't find the content you're looking for.
         <br />
-        Ana Sayfaya dönmek için butonu kullanabilirsiniz.
+        You can return to the homepage by using the button below.
       </h2>
       <Button apperance="outlined" onClick={() => router.push(ROUTES.HOME)}>
-        Ana Sayfa
+        Home Page
       </Button>
     </div>
   );

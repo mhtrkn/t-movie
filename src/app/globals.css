@@ -18,6 +18,10 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #121212;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @layer utilities {
