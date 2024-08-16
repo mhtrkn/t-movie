@@ -8,10 +8,8 @@ import {
   trendingApi,
   upcomingApi
 } from "@/api/tmdb-api";
-import { NextSeo } from "@/components/seo";
 import FeaturedMovie from "@/views/movies/featured";
 import SliderMovies from "@/views/movies/slider";
-import { Head } from "next/document";
 
 export default function Home({}) {
   const {

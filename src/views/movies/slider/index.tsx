@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { MovieSliderCard } from "../slider-card/movie-slider-card";
 
 interface Props {
-  data: MovieResponse | null;
+  data: MovieResponse;
   loading?: boolean;
   title: string;
 }

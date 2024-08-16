@@ -8,9 +8,14 @@ export const useGetData = ({
   language = "en-US",
   page = 1
 }: FetchDataProps) => {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [data, setData] = useState<MovieResponse>({
+    page: 0,
+    results: [],
+    total_pages: 0,
+    total_results: 0
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   useEffect(
     () => {
