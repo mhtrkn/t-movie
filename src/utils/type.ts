@@ -3,7 +3,6 @@ export interface FetchDataProps {
   language?: string;
   page?: number;
 }
-
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "mini" | "small" | "default" | "large";
@@ -11,13 +10,11 @@ export interface ButtonProps
   className?: string;
   children?: React.ReactNode;
 }
-
 export interface ReduxLoaderProps {
   loader: {
     open: true | false;
   };
 }
-
 export interface ReduxModalProps {
   modal: {
     open: true | false;
@@ -25,11 +22,9 @@ export interface ReduxModalProps {
     type?: "poster" | "error" | "info";
   };
 }
-
 export interface UpcomingMoviesProps {
   data: any;
 }
-
 export interface MovieType {
   adult?: boolean;
   backdrop_path?: string;
@@ -47,7 +42,6 @@ export interface MovieType {
   vote_average?: number;
   vote_count?: number;
 }
-
 export interface MovieResponse {
   page: number;
   results: MovieType[];
