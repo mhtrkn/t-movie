@@ -1,27 +1,34 @@
 import { useGetImage } from "@/api/helpers";
 import ImdbIcon from "@/assets/icons/imdb";
 import PlayIcon from "@/assets/icons/play";
+import PlusIcon from "@/assets/icons/plus";
 import { Button } from "@/components/button";
 import { ROUTES } from "@/routes";
 import { setLoaderModal } from "@/store/actions/loader";
 import { MovieResponse } from "@/utils/type";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 interface Props {
-  data: MovieResponse | null;
+  data: MovieResponse;
   loading: boolean;
 }
 
 function FeaturedMovie({ data, loading }: Props) {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   useEffect(() => {
     loading && setTimeout(() => {
       dispatch(setLoaderModal(false))
     }, 500);
   }, [loading]);
+
+  const handleRoute = () => {
+    router.push(`${ROUTES.PLAYING}${data?.results[0]?.id}`)
+  }
 
   return (
     <div className="w-full min-h-[90vh] relative pt-[7.1875rem]">
@@ -75,10 +82,13 @@ function FeaturedMovie({ data, loading }: Props) {
           </Link>
 
           <div className="flex items-center gap-4 justify-start mt-4">
-            <Button apperance="outlined">Watch trailer</Button>
+            <Button apperance="outlined">
+              <PlusIcon width={20} height={20} color="white" className="me-1" />
+              Add Favorites
+            </Button>
 
-            <Button apperance="filled">
-              <PlayIcon width={20} height={20} color="#2E2E2E" />
+            <Button onClick={() => handleRoute()} apperance="filled">
+              <PlayIcon width={20} height={20} color="#2E2E2E" className="me-1" />
               Watch now
             </Button>
           </div>

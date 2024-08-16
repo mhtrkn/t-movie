@@ -9,8 +9,9 @@ import { setLoaderModal } from "@/store/actions/loader";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { headers } from "next/headers";
+import { twMerge } from "tailwind-merge";
 
-export default function NotFoundPage() {
+export default function NotFoundPage({ className }: { className: string }) {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -19,7 +20,12 @@ export default function NotFoundPage() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center mt-[120px]">
+    <div
+      className={twMerge(
+        "w-full flex flex-col items-center justify-center mt-[120px]",
+        className
+      )}
+    >
       <NotFoundIcon width={379} height={325} />
       <h2 className="text-center text-lg mb-20 text-white">
         We're sorry, but we couldn't find the content you're looking for.

@@ -19,6 +19,14 @@ module.exports = {
             opacity: '1',
           },
         },
+        rise: {
+          '0%': { transform: 'translateY(100vh)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        drop: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(100vh)', opacity: '0' },
+        },
         'fade-in': {
           '0%': {
             opacity: '0',
@@ -49,14 +57,17 @@ module.exports = {
       animation: {
         'deep-out': 'deep-out 0.5s ease-out forwards',
         'deep-in': 'deep-in 0.5s ease-out forwards',
-        'fade-in': 'fade-in 0.3s ease-out',
-        'fade-out': 'fade-out 0.3s ease-out',
+        'rise': 'rise 0.5s ease-out forwards',
+        'drop': 'drop 0.5s ease-out forwards',
+        'fade-in': 'fade-in 0.3s ease-out forwards',
+        'fade-out': 'fade-out 0.3s ease-out forwards',
       },
       backgroundImage: {
         'custom-top-gradient': 'linear-gradient(180deg, rgba(18,18,18,0.7) 0%, rgba(18,18,18,0) 40%, rgba(18,18,18, 1) 100%)',
         'custom-left-gradient': 'linear-gradient(90deg, rgba(18,18,18,0.9) 0%, rgba(18,18,18,0) 100%)',
         'dark-left-gradient': 'linear-gradient(90deg, rgba(0,0,0,0.99) 25%, rgba(0,0,0,0.1) 100%)',
         'custom-gradient': 'linear-gradient(0, rgba(18,18,18,0.25) 0%, rgba(18,18,18,0.25) 100%)',
+        'modal-gradient': 'linear-gradient(0, rgba(18,18,18,1) 15%, rgba(18,18,18, 0) 100%)',
       },
       width: {
         '1/10': '10%',
@@ -81,6 +92,7 @@ module.exports = {
       colors: {
         dark: {
           DEFAULT: '#121212',
+          100: '#424242',
         },
         white: {
           DEFAULT: '#FFFFFF',

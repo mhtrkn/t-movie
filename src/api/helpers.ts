@@ -1,18 +1,14 @@
-import { FetchDataProps, MovieType } from "@/utils/type";
+import { FetchDataProps, MovieResponse, MovieType } from "@/utils/type";
 import { useEffect, useState } from "react";
 import { api_token, base_image_url, base_url } from "./api-config";
 import { movideDetails } from "./tmdb-api";
-import { useDispatch } from "react-redux";
-import { closePosterModal } from "@/store/actions/modal";
-import { ROUTES } from "@/routes";
-import { useRouter } from "next/navigation";
 
 export const useGetData = ({
   query = "",
   language = "en-US",
   page = 1
 }: FetchDataProps) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -54,6 +50,12 @@ export const useGetData = ({
 
 export const useGetImage = (url: string | undefined) => {
   const imageURL = `${base_image_url}w780${url}`;
+
+  return imageURL;
+};
+
+export const useGetSmallImage = (url: string | undefined) => {
+  const imageURL = `${base_image_url}w500${url}`;
 
   return imageURL;
 };

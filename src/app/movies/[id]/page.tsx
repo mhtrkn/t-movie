@@ -31,7 +31,6 @@ function MovieDetailPage({ params }: Props) {
 
   useEffect(() => {
     if (movieData && movieSuccess) {
-      console.log('datdat: ', movieData, movieLoading, movieSuccess);
       dispatch(setLoaderModal(false));
     }
   }, [movieSuccess, movieData]);

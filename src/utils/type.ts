@@ -6,6 +6,7 @@ export interface FetchDataProps {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  size?: "mini" | "small" | "default" | "large";
   apperance: "outlined" | "filled";
   className?: string;
   children?: React.ReactNode;
