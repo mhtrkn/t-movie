@@ -15,6 +15,13 @@ export interface ReduxLoaderProps {
     open: true | false;
   };
 }
+
+export interface ReduxAuthProps {
+  auth: {
+    user: true | false;
+  };
+}
+
 export interface ReduxModalProps {
   modal: {
     open: true | false;

@@ -16,8 +16,8 @@ const SimilarMovies = ({ id }: { id: number }) => {
         <div className="flex flex-col gap-5">
           <h3 className="mt-8 text-2xl">Similar Movies</h3>
           <div className="grid grid-cols-3 gap-5">
-            {similar?.results?.splice(0, 9)?.map((item) => (
-              <SimilarCard data={item} />
+            {similar?.results?.splice(0, 9)?.map((item, i) => (
+              <SimilarCard data={item} key={i} />
             ))}
           </div>
         </div>

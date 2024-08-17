@@ -8,7 +8,7 @@ import React from "react";
 
 const SimilarCard = ({ data }: { data: MovieType }) => {
   return (
-    <div className="w-full h-[350px] bg-dark border border-gray-900 overflow-hidden text-white rounded-lg">
+    <div key={data?.id} className="w-full h-[350px] bg-dark border border-gray-900 overflow-hidden text-white rounded-lg">
       <div
         className="w-full h-[150px] bg-top bg-cover bg-no-repeat"
         style={{
